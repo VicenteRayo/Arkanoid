@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script type="text/javascript" src="jquery-1.2.6.js"></script>
+<script src="ARKANOID.js"></script>
+<script src="GuardadoDatos.js"></script>
+
+  <title>ARKANOID</title>
+  <style type="text/css">
+		html, body	{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			justify-content: space-around;
+			background-color: black;
+		}
+		
+		#lienzo{
+			background-image: url("./Imagenes/Background.png");
+		}
+		
+		#izquierda{
+			width: 30%;
+			height: 100%;
+			background-color: white;
+		}
+		
+		#derecha{
+			width: 30%;
+			height: 100%;
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body onkeypress="paused(event)" onclick="crearPelota()">
+    <section id ="izquierda">
+	hola
+	</section>
+	<section id="cajalienzo">
+		<canvas id="lienzo" width="0" height="0" style="border:3px solid white;">
+			Su navegador no soporta el elemento canvas
+		</canvas>
+	</section>
+	<section id ="derecha">
+		<H1> RECORDS </H1>
+	</section>
+	
+	
+</body>
+</html>
