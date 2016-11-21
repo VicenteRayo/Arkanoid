@@ -46,7 +46,7 @@ var GameOverImagen = new Image();
 var imagenes = new Image();
 var PowerUpImagenes = new Image();
 
-var MaxPremios = 10;		//Variable que controla el nuemero maximo entre los que se dan los premios de forma aleatoria
+var MaxPremios = 15;		//Variable que controla el nuemero maximo entre los que se dan los premios de forma aleatoria
 var posXPremio; 	//Posición X donde aparece el premio
 var posYPremio;		//Posición Y donde aparece el premio
 var posXDibujoDisparo = 255;	//X del dibujo Premio disparo
@@ -280,7 +280,7 @@ function Pelota(constructor_pelota) {
 			canvas.font = "bold 30px sans-serif";
 			canvas.fillStyle = "white";
 			canvas.fillText ("Puntuación: " +puntos, (WIDTH/2)-(anchoGameOver/2), HEIGHT*0.65);
-			comparaRecord (puntos);
+			comparaRecord(puntos);
 		}
 	}
 }

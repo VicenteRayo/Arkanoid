@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta charset="UTF-8"/>
 <script type="text/javascript" src="jquery-1.2.6.js"></script>
 <script src="ARKANOID.js"></script>
 <script src="GuardadoDatos.js"></script>
@@ -24,7 +25,10 @@
 		#izquierda{
 			width: 30%;
 			height: 100%;
-			background-color: white;
+			background-color: black;
+			text-align: left;
+			color: white;
+			font-size:30px;
 		}
 		
 		#derecha{
@@ -39,7 +43,10 @@
 </head>
 <body onkeypress="paused(event)" onclick="crearPelota()">
     <section id ="izquierda">
-	hola
+	<h5>MOVIMIENTO: RATÓN.</h5>
+	<h5>DISPARO: BARRA ESPACIADORA.</h5>
+	<h5>PAUSE: TECLA PAUSE.</h5>
+
 	</section>
 	<section id="cajalienzo">
 		<canvas id="lienzo" width="0" height="0" style="border:3px solid white;">
@@ -48,6 +55,9 @@
 	</section>
 	<section id ="derecha">
 		<H1> RECORDS </H1>
+		<div id="huecoRecord">
+		
+		</div>
 	</section>
 	
 	
