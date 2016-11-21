@@ -11,4 +11,4 @@ Me hubiera gustado que la pelota fuera aumentando su velocidad cada cierto tiemp
 está el código solo se podría hacer bien pasandole la nueva velocidad al instanciar una 
 nueva pelota.
 
-También me hubiera gustado "refinar" las colisiones con de la pelota con los bloques.
+También me hubiera gustado _refinar_ las colisiones con de la pelota con los bloques.
