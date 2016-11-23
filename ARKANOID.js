@@ -41,6 +41,7 @@ var premioPelota = 1;		//Controlador de pelotas del jugador
 var premioLaserTiempo = 0;	//Controla el tiempo durante el que se puede disfrutar del premio Laser activo
 var premioBarraTiempo = 0;	//Controla el tiempo durante el que se puede disfrutar del premio Barra Máxima activo
 
+
 var dibujoBarra = new Image();
 var GameOverImagen = new Image();	
 var imagenes = new Image();
@@ -372,23 +373,44 @@ function Premio(constructor_Premio){
 	this.premio = constructor_Premio.premio;
 	this.posImag = 0;
 	this.visible = true;
+	this.entra = 0;
 	
 	this.dibujar = function() {	
+
 		if(this.premio == 1){
 			canvas.drawImage(PowerUpImagenes, 176, this.posImag, 16, 8, this.x, this.y, this.ancho, this.alto);
-			this.posImag = this.posImag + 8;
+			if (this.entra == 5){
+				this.posImag = this.posImag + 8;
+				this.entra = 0;
+			}else{
+				this.entra++;
+			}
+			
 			if (this.posImag >= 56){
 				this.posImag =0;
 			}
 		}else if(this.premio == 2){
 			canvas.drawImage(PowerUpImagenes, 256, this.posImag, 16, 8, this.x, this.y, this.ancho, this.alto);
-			this.posImag = this.posImag + 8;
+			entra = true;
+			if (this.entra == 5){
+				this.posImag = this.posImag + 8;
+				this.entra =0;
+			}else{
+				this.entra++;
+			}
+			
 			if (this.posImag >= 56){
 				this.posImag =0;
 			}
 		}else if(this.premio == 3){
 			canvas.drawImage(PowerUpImagenes, 304, this.posImag, 16, 8, this.x, this.y, this.ancho, this.alto);
-			this.posImag = this.posImag + 8;
+			entra = true;
+			if (this.entra == 5){
+				this.posImag = this.posImag + 8;
+				this.entra =0;
+			}else{
+				this.entra++;
+			}
 			if (this.posImag >= 56){
 				this.posImag =0;
 			}
