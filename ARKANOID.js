@@ -47,7 +47,7 @@ var GameOverImagen = new Image();
 var imagenes = new Image();
 var PowerUpImagenes = new Image();
 
-var MaxPremios = 3;		//Variable que controla el nuemero maximo entre los que se dan los premios de forma aleatoria
+var MaxPremios = 15;		//Variable que controla el nuemero maximo entre los que se dan los premios de forma aleatoria
 var posXPremio; 	//Posición X donde aparece el premio
 var posYPremio;		//Posición Y donde aparece el premio
 var posXDibujoDisparo = 255;	//X del dibujo Premio disparo
