@@ -47,7 +47,7 @@ var GameOverImagen = new Image();
 var imagenes = new Image();
 var PowerUpImagenes = new Image();
 
-var MaxPremios = 15;		//Variable que controla el nuemero maximo entre los que se dan los premios de forma aleatoria
+var MaxPremios = 3;		//Variable que controla el nuemero maximo entre los que se dan los premios de forma aleatoria
 var posXPremio; 	//Posición X donde aparece el premio
 var posYPremio;		//Posición Y donde aparece el premio
 var posXDibujoDisparo = 255;	//X del dibujo Premio disparo
@@ -232,27 +232,20 @@ function Pelota(constructor_pelota) {
 							puntos = puntos + 10;							
 							//bloques[j].splice(i, 1);
 							if(bloques[j][i].vida == 0 && bloques[j][i].premio == 1){
-								//premioPelota++
 								premios.splice(premios.length,0,new Premio({
 									x: bloques[j][i].x,
 									y: bloques[j][i].y,
 									premio: 1}));
 							}else if(bloques[j][i].vida == 0 && bloques[j][i].premio == 2){
-								//if (premioLaserTiempo<tiempoDePremios){
-									//premioLaserTiempo = tiempoDePremios;
 									premios.splice(premios.length,0,new Premio({
 									x: bloques[j][i].x,
 									y: bloques[j][i].y,
 									premio: 2}));
-								//}
 							}else if(bloques[j][i].vida == 0 && bloques[j][i].premio == 3){
-								//if (premioBarraTiempo<tiempoDePremios){
-									//premioBarraTiempo = tiempoDePremios;
 									premios.splice(premios.length,0,new Premio({
 									x: bloques[j][i].x,
 									y: bloques[j][i].y,
 									premio: 3}));
-								//}	
 							}	
 						}	
 					}
@@ -563,9 +556,8 @@ function resetPantalla(){
 	pelotas[0].dy = -velocidadPelota;
 	//sleep (3000);	
 	
-	for(a=0;a<premios.length;a++){
-		premios.splice(a,1);	
-	}	
+	delete premios;
+	premios = new Array;
 	
 	for(p=0;p<laseres.length;p++){
 		laseres.splice(p,1);
