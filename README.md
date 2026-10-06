@@ -1,14 +1,21 @@
 # Arkanoid
 
-El juego se maneja con el ratón para la posición de la barra, haciendo click soltamos
-las pelotas extra en caso de tener alguna, y con la barra espaciadora hacemos el 
-disparo laser simpre que tengamos el powerup activo y esté su barra llena.
+El juego se maneja con el ratón (o las flechas / A-D) para la posición de la barra.
+Al empezar y tras perder una vida la pelota espera sobre la barra: con un click se lanza.
+Durante la partida, haciendo click soltamos las pelotas extra en caso de tener alguna, y con la
+barra espaciadora hacemos el disparo laser siempre que tengamos el powerup activo y esté su barra llena
+(manteniendo pulsado dispara en cuanto se recarga).
 
-Botón Pause del teclado deja el juego en pause.
+- P, Escape o Pause: pausa (también se pausa sola al cambiar de pestaña).
+- M: quitar / poner el sonido.
 
+Cada 10 segundos baja una nueva fila de bloques y la pelota va un poco más rápida.
+Si los bloques llegan a la barra se pierde una vida. Cada 2000 puntos se gana una vida extra (máximo 5).
 
-Me hubiera gustado que la pelota fuera aumentando su velocidad cada cierto tiempo pero según
-está el código solo se podría hacer bien pasandole la nueva velocidad al instanciar una 
-nueva pelota.
+## Docker
 
-También me hubiera gustado "refinar" las colisiones con de la pelota con los bloques.
+```
+docker compose up -d --build
+```
+
+El juego queda en http://localhost:2001

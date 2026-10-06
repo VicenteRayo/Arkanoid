@@ -1,0 +1,8 @@
+services:
+  arkanoid:
+    build: .
+    image: arkanoid:latest
+    container_name: arkanoid
+    ports:
+      - "2001:80"
+    restart: unless-stopped

@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <script type="text/javascript" src="jquery-1.2.6.js"></script>
 <script src="ARKANOID.js"></script>
 <script src="GuardadoDatos.js"></script>
@@ -11,26 +15,48 @@
 		html, body	{
 			width: 100%;
 			height: 100%;
+			margin: 0;
 			display: flex;
 			align-items: center;
 			flex-direction: row;
 			justify-content: space-around;
 			background-color: black;
+			font-family: 'Press Start 2P', monospace;
+			user-select: none;
+			overflow: hidden;
 		}
-		
+
 		#lienzo{
+			display: block;
+			background-color: #001070;
 			background-image: url("./Imagenes/Background.png");
+			image-rendering: pixelated;
+			cursor: none;
+			box-shadow: 0 0 25px rgba(60, 110, 255, 0.45);
+			touch-action: none;
 		}
-		
+
 		#izquierda{
 			width: 30%;
 			height: 100%;
 			background-color: black;
 			text-align: left;
 			color: white;
-			font-size:30px;
+			font-size: 30px;
+			padding-left: 2%;
+			box-sizing: border-box;
 		}
-		
+
+		#izquierda h5{
+			font-size: 11px;
+			line-height: 1.8;
+			margin: 18px 0;
+		}
+
+		#izquierda .tecla{
+			color: #ffe95a;
+		}
+
 		#derecha{
 			width: 30%;
 			height: 100%;
@@ -39,14 +65,52 @@
 			text-align: center;
 		}
 
+		#derecha H1, #izquierda H1{
+			font-size: 20px;
+			color: #ffe95a;
+			text-shadow: 3px 3px #b03000;
+			margin: 30px 0;
+		}
+
+		#huecoRecord{
+			display: inline-block;
+			min-width: 75%;
+		}
+
+		#huecoRecord h3{
+			display: flex;
+			gap: 12px;
+			font-size: 11px;
+			font-weight: normal;
+			margin: 0;
+			padding: 9px 6px;
+			border-bottom: 1px dashed #333;
+		}
+
+		#huecoRecord h3:nth-child(1) .pos{ color: #ffd700; }
+		#huecoRecord h3:nth-child(2) .pos{ color: #c0c0c0; }
+		#huecoRecord h3:nth-child(3) .pos{ color: #cd7f32; }
+
+		#huecoRecord .pos{ width: 2em; text-align: right; color: #9ad0ff; }
+		#huecoRecord .nombre{ flex: 1; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+		#huecoRecord .pts{ text-align: right; }
+		#huecoRecord .actual{ color: #ffe95a; background: rgba(255, 233, 90, 0.08); }
+		#huecoRecord .vacio{ font-size: 10px; color: #777; line-height: 1.8; }
+
+		@media (max-width: 900px){
+			#izquierda, #derecha{ display: none; }
+		}
+
 	</style>
 </head>
-<body onkeypress="paused(event)" onclick="crearPelota()">
+<body onclick="clickRaton()">
     <section id ="izquierda">
-	<h5>MOVIMIENTO: RATÓN.</h5>
-	<h5>BOLA EXTRA: CLICK DE RATÓN.</h5>
-	<h5>DISPARO: BARRA ESPACIADORA.</h5>
-	<h5>PAUSE: TECLA PAUSE.</h5>
+	<H1>CONTROLES</H1>
+	<h5><span class="tecla">MOVIMIENTO:</span><br>RATON O FLECHAS.</h5>
+	<h5><span class="tecla">LANZAR / BOLA EXTRA:</span><br>CLICK DE RATON.</h5>
+	<h5><span class="tecla">DISPARO:</span><br>BARRA ESPACIADORA.</h5>
+	<h5><span class="tecla">PAUSE:</span><br>TECLA P O PAUSE.</h5>
+	<h5><span class="tecla">SONIDO:</span><br>TECLA M.</h5>
 
 	</section>
 	<section id="cajalienzo">
@@ -54,13 +118,13 @@
 			Su navegador no soporta el elemento canvas
 		</canvas>
 	</section>
-	<section id ="derecha">
+	<section id="derecha">
 		<H1> RECORDS </H1>
 		<div id="huecoRecord">
-		
+
 		</div>
 	</section>
-	
-	
+
+
 </body>
 </html>
