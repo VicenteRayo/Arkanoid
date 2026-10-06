@@ -1,8 +1,16 @@
+# Se publica en https://vicenterayo.com/proyectos/arkanoid/ a través del contenedor webvicente
+# (ver ../WebVicente/nginx.conf). Sin puertos en el host (antes 2001): solo es alcanzable
+# dentro de la red compartida "webnet". Arrancar primero WebVicente, que la crea.
 services:
   arkanoid:
     build: .
     image: arkanoid:latest
     container_name: arkanoid
-    ports:
-      - "2001:80"
     restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    name: webnet
+    external: true
